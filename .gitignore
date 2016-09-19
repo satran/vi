@@ -1,0 +1,11 @@
+build/*.o
+build/nex
+build/nvi
+build/config.log
+build/Makefile
+build/config.cache
+build/config.h
+build/config.status
+build/pathnames.h
+build/port.h
+build/recover

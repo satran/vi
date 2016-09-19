@@ -23,7 +23,7 @@ static const char sccsid[] = "@(#)ex_script.c	10.30 (Berkeley) 9/24/96";
 #include <sys/select.h>
 #endif
 #include <sys/stat.h>
-#ifdef HAVE_SYS5_PTY
+#if defined(HAVE_SYS5_PTY) && !defined(__GLIBC__)
 #include <sys/stropts.h>
 #endif
 #include <sys/time.h>
@@ -625,7 +625,7 @@ sscr_check(sp)
 	F_CLR(gp, G_SCRWIN);
 }
 
-#ifdef HAVE_SYS5_PTY
+#if defined(HAVE_SYS5_PTY) && !defined(__GLIBC__)
 static int ptys_open __P((int, char *));
 static int ptym_open __P((char *));
 
